@@ -1,0 +1,144 @@
+.cajaselectP {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    z-index: auto;
+    border-radius: 5px;
+    border: 1px solid $accent-2;
+    outline: none;
+    background-color: $imput-Color;
+    color: $white;
+    transition: all 0.3s ease;
+    &:hover{
+      background-color: $accent-2;
+      border: 1px solid $accent-2;
+    }
+    &-seleccionadoP {
+      color: white;
+      width: 100%;
+      line-height: 1;
+      text-indent: 10px;
+      padding: 5px 50px;
+    }
+  
+    &-trianguloinfP {
+        width: 100%;
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-right: 6px solid rgba(0, 0, 0, 0);
+        border-top: 9px solid #cfecfc;
+        height: 0;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        width: 0;
+    }
+    
+    &-triangulosupP {
+      width: 100%;
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      width: 0;
+    }
+  }
+  
+  .listaselectP {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #dedede;
+    display: none;
+    left: -1px;
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: 15px;
+    top: 0;
+    width: 100%;
+  }
+  .desplegableSelP {
+    outline: none;
+    background-color: $Card-Color-dark;
+    color: $white;
+    border: 1px solid $accent-2;
+    transition: all 0.3s ease;
+    cursor: pointer;  
+    position: absolute;
+    width: 100%;
+    z-index: auto;
+    margin: 10px 0 0 0 !important;
+    border-radius: 0 0 5px 5px;
+    transition: all 0.3s ease;
+    overflow: auto;
+    max-height: 180px;
+    & li {
+      height: 30px;
+      color: $white;
+      cursor: pointer;
+      list-style: outside none none;
+      width: 100%;
+      position: relative;
+      color: white;
+      text-indent: 10px;
+      padding: 0px 0px;
+      &:hover{
+        background-color: $accent-2;
+      }
+    }
+  }
+  
+  .cajaselectSinBoderP {
+    
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    z-index: 50;
+    outline: none;
+    background-color: $accent-2;
+    border: 1px solid $accent-2;
+    
+    color: $white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    &-seleccionadoP {
+      color: white;
+      line-height: 2;
+      text-indent: 10px;
+      padding: 5px 10px;
+    }
+  
+    &-trianguloinfP {
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      width: 0;
+    }
+  
+    &-triangulosupP {
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      width: 0;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .cajaselectP-seleccionadoP {
+        color: white;
+        width: 100%;
+        line-height: 2;
+        text-indent: 10px;
+        padding: 5px 14px;
+      }
+  
+  }

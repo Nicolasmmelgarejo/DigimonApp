@@ -1,0 +1,119 @@
+.ModificacionPage{
+    &-Img{
+        display: flex;
+        position: relative;
+        top: 25%;
+        transition: all 0.3s ease;
+        &-Izquierda{
+            position: absolute;
+            left: 15%;
+            transition: all 0.3s ease;
+            filter: invert(1);
+            @include darkMode{
+                filter: invert(0);
+            }
+        }
+        &-Derecha{
+            position: absolute;
+            right: 15%;
+            transition: all 0.3s ease;
+            filter: invert(1);
+            @include darkMode{
+                filter: invert(0);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .ModificacionPage{
+        &-Img{
+            top: 23%;
+            transition: all 0.3s ease;
+            &-Izquierda{
+                position: absolute;
+                left: 15%;
+                transition: all 0.3s ease;
+            }
+            &-Derecha{
+                position: absolute;
+                right: 15%;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+  
+  }
+
+@media screen and (max-width: 1500px) {
+    .ModificacionPage{
+        &-Img{
+            top: 20%;
+            transition: all 0.3s ease;
+            &-Izquierda{
+                position: absolute;
+                left: 15%;
+                transition: all 0.3s ease;
+            }
+            &-Derecha{
+                position: absolute;
+                right: 15%;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+  
+  }
+
+@media screen and (max-width: 1250px) {
+    .ModificacionPage{
+        &-Img{
+            display: none;
+            position: relative;
+            top: 20%;
+            &-Izquierda{
+                position: absolute;
+                left: 15%;
+            }
+            &-Derecha{
+                position: absolute;
+                right: 15%;
+            }
+        }
+    }
+  }
+
+  @media screen and (max-height: 768px) {
+    .ModificacionPage{
+        &-Img{
+            display: flex;
+            position: relative;
+            top: 8%;
+            &-Izquierda{
+                position: absolute;
+                left: 15%;
+            }
+            &-Derecha{
+                position: absolute;
+                right: 15%;
+            }
+        }
+    }
+    @media screen and (max-width: 1250px) {
+        .ModificacionPage{
+            &-Img{
+                display: none;
+                position: relative;
+                top: 20%;
+                &-Izquierda{
+                    position: absolute;
+                    left: 15%;
+                }
+                &-Derecha{
+                    position: absolute;
+                    right: 15%;
+                }
+            }
+        }
+      }
+  }

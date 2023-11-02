@@ -1,0 +1,15 @@
+
+<div *ngFor="let oContent of oLstContent">
+    <div class="Card-Container">
+        <div class="Card">
+            <div class="Card-header">
+                <img src="{{oContent.image}}" (click)="mostrarDetalles(oContent.id)" class="w-48 h-48 cursor-pointer">
+            </div>
+            <div class="Card-body">
+                <a>
+                    <p (click)="cargar(oContent.name)" class="Card-description cursor-pointer"> {{oContent.name}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

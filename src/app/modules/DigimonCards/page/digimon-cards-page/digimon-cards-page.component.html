@@ -1,0 +1,14 @@
+<section class="h-full">
+    <div class="w-full h-40">
+        <div class="ObMovimiento-Form-Button-Div mb-8 z-50">
+
+            <button  (click)="movimientoIzquierda()" class="ObMovimiento-Form-Button-Div-Izquierda" type="submit" [disabled]="this.habilitadoIzquierda"><img src="../../../assets/svgs/chevrons-left.svg"><img src="../../../assets/svgs/chevrons-left.svg" class="DivI-Inicio-H1-Sacar"><img src="../../../assets/svgs/chevrons-left.svg" class="DivI-Inicio-H1-Sacar"><img src="../../../assets/svgs/chevrons-left.svg"></button>
+            
+            <app-select-posicion class="ObMovimiento-Form-Button-Div-Select"></app-select-posicion>
+            
+            <button  (click)=" movimientoDerecha()" class="ObMovimiento-Form-Button-Div-Derecha" type="submit" [disabled]="this.habilitadoDerecha"><img src="../../../assets/svgs/chevrons-right.svg"><img src="../../../assets/svgs/chevrons-right.svg" class="DivI-Inicio-H1-Sacar"><img src="../../../assets/svgs/chevrons-right.svg" class="DivI-Inicio-H1-Sacar"><img src="../../../assets/svgs/chevrons-right.svg"></button>
+            
+        </div>
+        <app-import class="CargaMasiva-Contenedor"></app-import>
+    </div>
+</section>

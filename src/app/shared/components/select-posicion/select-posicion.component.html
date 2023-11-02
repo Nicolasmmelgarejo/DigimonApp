@@ -1,0 +1,9 @@
+<div #caja class="cajaselectP z-50" (click)="clickBox()">
+    <span class="cajaselectP-seleccionadoP z-50 No-Seleccionable">{{valueSelect}}</span>
+    <span #triangulo class="cajaselectP-trianguloinfP z-50"></span>
+    <ul #lista class="listaselectP No-Seleccionable z-50" >
+        <li class="No-Seleccionable z-50" *ngFor="let value of values" (click)="select(value)">
+            {{value}}
+        </li>
+    </ul>
+</div>

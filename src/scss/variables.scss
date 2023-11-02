@@ -1,0 +1,37 @@
+$theme:'light';
+$primary-Color: #067f81;
+$primary-Color-Invert: #f9807e;
+$secondary-Color: #1e409c ;
+$tertiary-Color: #31333F;
+$black: #353535;
+$black-select: #353535ed;
+$white: #FFFFFF;
+$accent-2: #27888a;
+$accent-2-Invert: #d87775;
+$accent-2-imput:#39A9AB;
+$error: #FF4B4B;
+$success: #61D345;
+$warning: #FFB74B;
+$accent: #AC56F5;
+$Card-Color:rgba(255, 255, 255, 0.692);
+$Shadow:0 0 10px 0 rgba(0,0,0,0.1);
+$Border-Card-Color: rgba(255,255,255,0.1);
+$text-container: #353535;
+$text-nav:#ffffff;
+$mouse-hover:radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),rgba(218, 218, 218, 0.623),transparent 40%);
+$Card-Color-dark:rgba(53, 53, 53, 0.692);
+$Card-Color-dark-b:rgba(53, 53, 53, 0.95);
+$text-container-dark: #ffffff;
+$text-nav-dark:#ffffff;
+$disabled: #5b8485;
+$mouse-hover-dark:radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),rgba(70, 70, 70, 0.623),transparent 40%);
+$imput-Color: #19696a3b;
+$imput-Color-success: #61d34523;
+$imput-Color-error: #ff4b4b1f;
+$imput-Color-warning: #ffb74b1f;
+@mixin darkMode {
+    $selector: #{&};
+    @at-root body.dark #{$selector} {
+        @content
+    }
+}

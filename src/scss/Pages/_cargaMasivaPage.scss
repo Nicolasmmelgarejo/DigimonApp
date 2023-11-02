@@ -1,0 +1,31 @@
+.CargaMasiva-Contenedor{
+    gap: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1500px) {
+    .CargaMasiva-Contenedor{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .CargaMasiva-Contenedor{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .CargaMasiva-Contenedor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .CargaMasiva-Contenedor{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

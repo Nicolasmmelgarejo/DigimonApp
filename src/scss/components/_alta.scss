@@ -1,0 +1,1050 @@
+
+.Alta{
+  &-Img{
+    display: flex;
+    top: 23%;
+    transition: all 2s ease;
+    &-Izquierda{
+      position: absolute;
+      left: 42.5%;
+      transition: all 2s ease;
+      border-bottom: 20px solid transparent;
+      filter: invert(1);
+      @include darkMode{
+        filter: invert(0);
+      }
+    }
+    &-Derecha{
+      position: absolute;
+      right: 42.5%;
+      transition: all 2s ease;
+      filter: invert(1);
+      border-bottom: 20px solid transparent;
+      @include darkMode{
+        filter: invert(0);
+      }
+    }
+  }
+  
+  &-Aceptado{ 
+    background-color: $imput-Color-success;
+    border-radius: 10px;
+    border: 1px solid $success;
+    box-shadow: $Shadow;
+    padding: 2rem;
+    display: flex;
+    color: $black;
+    flex-direction: column;
+    transform: scale(1);
+    margin-bottom: 20px !important;
+    animation: buttonAniamte2  1.5s ease-in-out;
+    gap: 1rem;
+    max-height: 373px;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0.6vw 0 0 0;
+    @include darkMode{
+      color: $white;
+    }
+  }
+  &-Desplazar{
+    &-Izquierda{
+      transform: translate(-200px,0);
+      margin-top: 2%;
+    }
+    &-Derecha{
+      transform: translate(200px, 0);
+      margin-top: 2%;
+    }
+  }
+    &-Tarjeta{
+      gap: 20px;
+      display: grid;
+      width: 90%;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 20px;
+      margin-bottom: 20px;
+      position: absolute;
+      overflow-x: auto;
+      overflow-y: hidden;
+      &-Component{
+        position: relative;
+        animation: buttonAniamte  0.3s ease-in-out;
+        background-color: $imput-Color;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+        border: 1px solid $accent-2;
+        min-width: 200px;
+        &-Button{
+          padding: 4px;
+          border-radius: 5px;
+          border: 1px solid $primary-Color;
+          justify-self: end;
+          margin-left: 10px;
+          outline: none;
+          background-color: $accent-2;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+    }
+    
+    &-Card{
+      background-color: $Card-Color;
+      border-radius: 10px;
+      box-shadow: $Shadow;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      overflow: auto;
+      backdrop-filter: blur(5px);
+      border: $Border-Card-Color solid 1px;
+    }
+    &-Form{
+      gap: 1.5rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 22px;
+      margin-bottom: 20px;
+      &-Input{
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        height: 50px;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+        border: 1px solid $accent-2;
+        color: $black;
+        background-color:$Card-Color;
+        @include darkMode{
+          color: $white;
+          border: 1px solid $accent-2;
+          background-color: $imput-Color;
+        }
+        &-Uno{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $white;
+          
+          outline: none;
+          background-color: transparent;
+          color: $black;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          grid-column-start: 2;
+          grid-row-start: 1;
+          background-color:$Card-Color;
+        @include darkMode{
+          color: $white;
+          border: 1px solid $accent-2;
+          background-color: $imput-Color;
+        }
+          &:focus{
+            border: 1px solid $primary-Color;
+          }
+          
+        }
+      
+        &-Tres{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $white;
+          outline: none;
+          background-color: transparent;
+          color: $black;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          grid-column-start: 4;
+          grid-row-start: 1;
+          background-color:$Card-Color;
+        @include darkMode{
+          color: $white;
+          border: 1px solid $accent-2;
+          background-color: $imput-Color;
+        }
+          &:focus{
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+  
+      &-Header{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+        &-H1{
+          color: $white;
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
+      
+        &-Select{  
+          justify-self: right;
+          text-align: center;
+          width: 100%;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          height: 50px;
+          &:hover{
+            cursor: pointer;
+          }
+          &-Option{
+            justify-self: right;
+            text-align: center;
+            width: 100%;
+            border: 1px solid $accent-2;
+            outline: none;
+            background-color: $accent-2;
+            color: $white;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            height: 50px;
+            &:hover{
+              cursor: pointer;
+              background-color: $accent-2;
+            }
+          }
+        }
+      
+        &-Button{
+          justify-self: right;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          width: 100%;
+          height: 50px;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+  
+      &-Textarea{
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        background-color: transparent;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        resize: none;
+        background-color: $imput-Color;
+  
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+        
+      }
+      
+      &-Button{
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        background-color: $accent-2;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        height: 50px;
+        width: 100%;
+        margin: 0 0 20px 0;
+        &:disabled {
+          background: $disabled;
+          cursor: not-allowed;
+        }
+  
+        &:disabled:hover{
+          background: $disabled; 
+          cursor: not-allowed;
+        }
+  
+        &:hover{
+          background-color: $primary-Color;
+          border: 1px solid $primary-Color;
+        }
+        
+        &-No{
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          height: 50px;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 9;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+    
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+    
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+          
+        }
+  
+        &-Cancelar{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+      
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+        
+        &-Guardar{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+      
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+    
+      &-Cambio{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+    }
+  }
+  
+  .H1{
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    @include darkMode{
+      color: $white;
+    }
+  }
+
+
+  @media screen and (max-width: 1250px) {
+    .Alta-Form{
+      &-Header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        
+        &-H1{
+          color: $white;
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 400;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+        }
+  
+        &-Select{  
+          text-align: center;
+          width: 100%;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          height: 50px;
+          transition: all 0.3s ease;
+          grid-column-start: 2;
+          grid-column-end: 2;
+          grid-row-start: 2;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+  
+        &-Button{
+          justify-self: center;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          width: 100%;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          grid-column-start: 1;
+          grid-column-end: 1;
+          grid-row-start: 2;
+          transition: all 0.3s ease;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+          
+        }
+      }
+      &-Cambio{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+      }
+      &-Input-Uno{
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+      }
+    
+      &-Input-Tres{
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        grid-column-start: 1;
+        grid-row-start: 4;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .Alta-Form{
+      &-Header{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        
+        &-H1{
+          color: $white;
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 400;
+          grid-column-start: auto;
+          grid-column-end: auto;
+          grid-row-start: auto;
+        }
+  
+        &-Select{  
+          text-align: center;
+          width: 100%;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          height: 50px;
+          transition: all 0.3s ease;
+          grid-column-start: auto;
+          grid-column-end: auto;
+          grid-row-start: auto;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+  
+        &-Button{
+          justify-self: center;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          width: 100%;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          grid-column-start: auto;
+          grid-column-end: auto;
+          grid-row-start: auto;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+      &-Cambio{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+      }
+      &-Input-Uno{
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+      }
+    
+      &-Input-Tres{
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        grid-column-start: 1;
+        grid-row-start: 4;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 780px) {
+    .H1{
+      color: $black;
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-align: center;
+      @include darkMode{
+        color: $white;
+      }
+    }
+    .Alta-Form{
+      gap: 1.5rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+  
+      &-Header{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        
+        &-H1{
+          color: $white;
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 400;
+          grid-column-start: auto;
+          grid-column-end: auto;
+          grid-row-start: auto;
+        }
+        &-Select{  
+          text-align: center;
+          width: 100%;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+  
+        &-Button{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          width: 100%;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+      &-Input{
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+        
+        &-Uno{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $imput-Color;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          grid-column-start: 1;
+          grid-row-start: 2;
+          &:focus{
+            border: 1px solid $primary-Color;
+          }
+        }
+      
+        &-Tres{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $imput-Color;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          grid-column-start: 1;
+          grid-row-start: 4;
+          &:focus{
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+      &-Textarea{
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        background-color: $imput-Color;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        resize: none;
+        height: 80px;
+  
+        grid-column-start: 1;
+        grid-row-start: 4;
+        grid-row-end: 9;
+    
+        &:focus{
+          border: 1px solid $primary-Color;
+        }
+        
+      }
+      
+      &-Button{
+        border-radius: 5px;
+        border: 1px solid $accent-2;
+        outline: none;
+        background-color: $accent-2;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+    
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: auto;
+    
+        &:disabled {
+          background: $disabled;
+          cursor: not-allowed;
+        }
+  
+        &:disabled:hover{
+          background: $disabled; 
+          cursor: not-allowed;
+        }
+  
+        &:hover{
+          background-color: $primary-Color;
+          border: 1px solid $primary-Color;
+        }
+        
+        &-No{
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+          height: 50px;
+          grid-column-start: 1;
+          grid-column-end: 1;
+          grid-row-start: auto;
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+    
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+    
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+          
+        }
+  
+  
+        &-Cancelar{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+      
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+        
+        &-Guardar{
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid $accent-2;
+          outline: none;
+          background-color: $accent-2;
+          color: $white;
+          font-size: 1rem;
+          font-weight: 400;
+          transition: all 0.3s ease;
+      
+          &:disabled {
+            background: $disabled;
+            cursor: not-allowed;
+          }
+          &:disabled:hover{
+            background: $disabled; 
+            cursor: not-allowed;
+          }
+          &:hover{
+            background-color: $primary-Color;
+            border: 1px solid $primary-Color;
+          }
+        }
+      }
+    }
+  }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=date]::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: $accent-2-Invert;
+  &:hover{
+    background-color: $primary-Color-Invert;
+  }
+}
+@media screen and (max-width: 1750px) {
+  .Alta{
+    &-Img{
+      display: none;
+      top: 23%;
+      transition: all 2s ease;
+      &-Izquierda{
+          position: absolute;
+          left: 42.5%;
+          transition: all 2s ease;
+          
+      }
+      &-Derecha{
+          position: absolute;
+          right: 42.5%;
+          transition: all 2s ease;
+          
+      }
+    }
+    &-Aceptado{ 
+      animation: buttonAniamte2  0.3s ease-in-out;
+    }
+  }
+  
+  .w-1\/5{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .Alta{
+    &-Img{
+      display: flex;
+      top: 23%;
+      transition: all 2s ease;
+      &-Izquierda{
+        position: absolute;
+        left: 39%;
+        transition: all 2s ease;
+        border-bottom: 20px solid transparent;
+        filter: invert(1);
+        @include darkMode{
+          filter: invert(0);
+        }
+      }
+      &-Derecha{
+        position: absolute;
+        right: 39%;
+        transition: all 2s ease;
+        filter: invert(1);
+        border-bottom: 20px solid transparent;
+        @include darkMode{
+          filter: invert(0);
+        }
+      }
+    }
+    &-Aceptado{ 
+      animation: buttonAniamte2  1.5s ease-in-out;
+    }
+  }
+  .w-1\/5{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .Alta{
+    &-Img{
+      display: none;
+      top: 23%;
+      transition: all 2s ease;
+      &-Izquierda{
+        position: absolute;
+        left: 39%;
+        transition: all 2s ease;
+        border-bottom: 20px solid transparent;
+        filter: invert(1);
+        @include darkMode{
+          filter: invert(0);
+        }
+      }
+      &-Derecha{
+        position: absolute;
+        right: 39%;
+        transition: all 2s ease;
+        filter: invert(1);
+        border-bottom: 20px solid transparent;
+        @include darkMode{
+          filter: invert(0);
+        }
+      }
+    }
+    &-Aceptado{ 
+      animation: buttonAniamte2  0.3s ease-in-out;
+    }
+  }
+  .w-1\/5{
+    width: 100%;
+  }
+}
+
+.OcultarTarjeta{
+  display: none !important;
+}
+
+
+
+
+//expanded
+.mat-expansion-panel{
+  color: $white;
+  background-color: $imput-Color;
+    background-color: $imput-Color;
+    width: auto;
+    text-decoration: none;
+    border: 1px solid $accent-2;
+}
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    color: $white;
+    display: block !important;
+    text-align: center;
+    margin-right: 0px !important;
+}
+.mat-expansion-panel-header.mat-expanded {
+    height: 48px;
+    background:  $primary-Color;
+    border-radius: 2px 2px 0px 0px;
+}
+.mat-expansion-panel-header {
+    cursor: pointer;
+    background-color:  $imput-Color;
+}
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+    background:  $primary-Color;
+}
+.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover {
+    background-color:  $primary-Color !important;
+}
+.mat-expansion-panel{
+    margin: 0 0 20px 0 !important;
+}
+
+.mat-expansion-indicator::after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+}
+.mat-expansion-indicator:after {
+    color: #ffffffb3;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 24px 150px !important;
+}

@@ -1,0 +1,837 @@
+.Navbar{
+  top: 0;
+  padding: 2px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: $Card-Color;
+  border-radius: 10px;
+  box-shadow: $Shadow;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  @include darkMode{
+    background-color: $Card-Color-dark;
+  }
+  &-Toggle{
+    display: auto;
+  }
+  &-Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    &-ChangeTheme{
+      display:none;
+      margin-top: 0px;
+    }
+    &-Img{
+      filter: invert(1);
+      @include darkMode{
+        filter: invert(0);
+      }
+    }
+    &-Cruz{
+      max-width: none;
+      width: 35px;
+      position: absolute;
+      right: 1px;
+    }
+    
+  }
+  &-List{
+    border-radius: 10px;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  &-Button{
+    z-index: 4;
+    display: none;
+    position: absolute;
+    background-color: transparent !important;
+    border-radius: 10px;
+    overflow: auto;
+    box-shadow: $Shadow;
+    margin-right: 10px;
+    border: none;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      animation: buttonAniamte 0.3s ease-in-out;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 2px;
+      transform: translate(-50%,-50%);
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 2px;
+      transform: translate(-50%,-50%);
+    }
+    &-Menu{
+      position: relative;
+      display:none;
+    }
+  }
+  &-Item{
+    color: $black;
+    width: auto;
+    padding: 10px;
+    text-decoration: none;
+    @include darkMode{
+      color: $white;
+    }
+    &:hover{
+      padding: 10px;
+      border-radius: 5px;
+      background: $primary-Color;
+      cursor: pointer;
+      color: $white;
+    }
+  }
+}
+
+.cajaselectN {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  padding: 10px;
+  outline: none;
+  text-decoration: none;
+  color: $white;
+  align-items: center;
+  display: flex;
+  justify-items: center;
+  justify-self: center;
+  @include darkMode{
+    color: $white;
+  }
+  &:hover{
+    padding: 10px;
+    border-radius: 5px;
+    background: $primary-Color;
+    cursor: pointer;
+    color: $white;
+  }
+  &-seleccionadoN {
+    color: $black;
+    @include darkMode{
+      color: $white;
+    }
+  }
+  &-trianguloinfN {
+    width: 100%;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid $primary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+  
+  &-triangulosupN {
+    width: 100%;
+    border-bottom: 9px solid $primary-Color;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.listaselectN {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #dedede;
+  display: none;
+  left: -1px;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 15px;
+  top: 0;
+  width: 100%;
+}
+.desplegableSelN {
+  outline: none;
+  background-color: $Card-Color-dark;
+  color: $black;
+  border: 1px solid $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 160px 0 0 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  @include darkMode{
+    color: $white;
+  }
+  & li {
+    height: 50px;
+    color: $black;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    @include darkMode{
+      color: $white;
+    }
+    &:hover{
+      background-color: $primary-Color;
+      color: $black;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+}
+.desplegableSelNUnItem {
+  outline: none;
+  background-color: $Card-Color-dark;
+  color: $black;
+  border: 1px solid $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 110px 0 0 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  @include darkMode{
+    color: $white;
+  }
+  & li {
+    height: 50px;
+    color: $black;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    @include darkMode{
+      color: $white;
+    }
+    &:hover{
+      background-color: $primary-Color;
+      color: $black;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+}
+.cajaselectSinBoderN {
+  
+  position: relative;
+  width: 6.5rem;
+  height: auto;
+  z-index: 1;
+  padding: 10px;
+  height: 44px;
+  outline: none;
+  text-decoration: none;
+  align-items: center;
+  display: flex ;
+  justify-items: center;
+  color: $black;
+  @include darkMode{
+    color: $white;
+  }
+  border-radius: 5px 5px 5px 5px;
+
+  background-color: $primary-Color;
+
+  &-trianguloinfN {
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid #cfecfc;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+
+  &-triangulosupN {
+    border-bottom: 9px solid #cfecfc;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.cajaselectN {
+  cursor: pointer;
+  position: relative;
+  width: 6.5rem;
+  height: auto;
+  z-index: 1;
+  padding: 10px;
+  outline: none;
+  text-decoration: none;
+  color: $black;
+  align-items: center;
+  display: flex;
+  justify-items: center;
+  justify-self: center;
+  @include darkMode{
+    color: $white;
+  }
+  &:hover{
+    padding: 10px;
+    border-radius: 5px;
+    background: $primary-Color;
+    cursor: pointer;
+  }
+  &-seleccionadoN {
+    color: white;
+  }
+  &-trianguloinfN {
+    width: 100%;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid $secondary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+  
+  &-triangulosupN {
+    width: 100%;
+    border-bottom: 9px solid $secondary-Color;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.listaselectN {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #dedede;
+  display: none;
+  left: -1px;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 15px;
+  top: 0;
+  width: 100%;
+}
+.desplegableSelN {
+  outline: none;
+  background-color: $Card-Color;
+  color: $black;
+  border: 1px solid  $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 160px 0 0 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  @include darkMode{
+    background-color: $Card-Color-dark;
+    border-top: $Card-Color-dark-b;
+    color: $white;
+  }
+  & li {
+    height: 50px;
+    color: $black;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    &:hover{
+      background-color:  $primary-Color;
+      color: $white;
+    }
+    @include darkMode{
+      color: $white;
+    }
+  }
+}
+.desplegableSelNUnItem {
+  outline: none;
+  background-color: $Card-Color;
+  color: $black;
+  border: 1px solid  $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 110px 0 0 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  @include darkMode{
+    background-color: $Card-Color-dark;
+    border-top: $Card-Color-dark-b;
+    color: $white;
+  }
+  & li {
+    height: 50px;
+    color: $black;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    &:hover{
+      background-color:  $primary-Color;
+      color: $white;
+    }
+    @include darkMode{
+      color: $white;
+    }
+  }
+}
+.cajaselectSinBoderN {
+  
+  cursor: pointer;
+  position: relative;
+  width: 6.5rem;
+  z-index: 1;
+  outline: none;
+  text-decoration: none;
+  padding: 9px;
+  height: 44px;
+  justify-items: start;
+  display: grid;
+  border-radius: 5px 5px 0 0;
+
+  background-color:  $primary-Color;
+  border: 1px solid  $primary-Color;
+
+  &-trianguloinfN {
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid $secondary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+
+  &-triangulosupN {
+    border-bottom: 9px solid $secondary-Color;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 1270px){
+.Navbar{
+  &-Button{
+    &-Menu{
+      display: block;
+      &:hover{
+        animation: buttonAniamte 0.3s ease-in-out;
+      }
+    }
+  }
+  &-List{
+    gap: 20px;
+  }
+  &-Toggle{
+    display: none;
+  }
+  &-Container{
+    &-ChangeTheme{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      color: $black;
+      @include darkMode{
+        color: $white;
+      }
+    }
+    &-Button{
+      &-Menu{
+        align-self: end;
+        top: 1px;
+        &:hover{
+          animation: buttonAniamte 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  &-List{
+    overflow: auto;
+    z-index: 5;
+    background: $white;
+    position: fixed;
+    top: 20px;
+    width: 96%;
+    height: 96%;
+    left: 2%;
+    box-shadow: $Shadow;
+    transform: scale(0);
+    transform-origin: top right;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    @include darkMode{
+      background: $black;
+    }
+    &:hover{
+      color: $white;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+  &-Item{
+    display: flex;
+    color: $black;
+    @include darkMode{
+      color: $white;
+    }
+    &:hover{
+      color: $white;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+  .Active{
+    opacity: 1;
+    transform: scale(1);
+  }
+  &-Button{
+    display: block;
+    &-Menu{
+      display: block;
+    }
+  }
+}
+.cajaselectN {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  padding: 10px;
+  outline: none;
+  text-decoration: none;
+  color: $black;
+  align-items: center;
+  display: flex;
+  justify-items: center;
+  justify-self: center;
+  @include darkMode{
+    color: $white;
+  }
+  &:hover{
+    padding: 10px;
+    border-radius: 5px;
+    background: $primary-Color;
+    cursor: pointer;
+    color: $white;
+    @include darkMode{
+      color: $white;
+    }
+  }
+  &-seleccionadoN {
+    color: white;
+    line-height: 2.5;
+    padding: 5px 10px;
+    &:hover{
+      color: $white;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+  &-trianguloinfN {
+    width: 100%;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid $secondary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+  
+  &-triangulosupN {
+    width: 100%;
+    border-bottom: 9px solid $secondary-Color;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 9px solid #cfecfc;
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.listaselectN {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #dedede;
+  display: none;
+  left: -1px;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 15px;
+  top: 0;
+  width: 100%;
+}
+.desplegableSelN {
+  outline: none;
+  background-color: $Card-Color-dark;
+  color: $black;
+  border: 1px solid $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  & li {
+    height: 50px;
+    color: $white;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    color: white;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    &:hover{
+      background-color:$primary-Color;
+      color: $white;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+}
+
+.desplegableSelNUnItem {
+  outline: none;
+  background-color: $Card-Color-dark;
+  color: $black;
+  border: 1px solid $primary-Color;
+  border-top: $Card-Color-dark-b;
+  cursor: pointer;  
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 0 !important;
+  border-radius: 0 0 5px 5px;
+  
+  & li {
+    height: 50px;
+    color: $white;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    color: white;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    &:hover{
+      background-color:$primary-Color;
+      color: $white;
+      @include darkMode{
+        color: $white;
+      }
+    }
+  }
+}
+.cajaselectSinBoderN {
+  
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  outline: none;
+  text-decoration: none;
+  color: $white;
+  padding: 0;
+  border-radius: 5px 5px 5px 5px;
+
+  background-color: $primary-Color;
+  border: 1px solid $primary-Color;
+
+  &-trianguloinfN {
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 9px solid $secondary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+
+  &-triangulosupN {
+    border-bottom: 9px solid $secondary-Color;
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-top: 9px solid #cfecfc;
+    }
+  }
+}
+}
+
+
+@media screen and (max-width: 800px){
+  .Navbar-List{
+    left: 2%;
+  }
+
+}
+
+
+
+
+@keyframes buttonAniamte {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonAniamte2 {
+  0%{
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+

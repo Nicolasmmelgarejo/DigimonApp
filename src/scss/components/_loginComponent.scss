@@ -1,0 +1,134 @@
+.Login{
+  &-Card{
+    background-color: $Card-Color;
+    border-radius: 10px;
+    box-shadow: $Shadow;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //gap: 1rem;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    width: 800px;
+    height: 400px;
+    border: $Border-Card-Color solid 1px;
+    position: relative;
+    color: $black;
+    transition: all 0.1s ease-in-out;
+    @include darkMode{
+      background-color: $Card-Color-dark;
+      color: $white;
+    }
+    &:hover::before{
+      opacity: 1;
+    }
+    &::before{
+      opacity: 1;
+      background: $mouse-hover;
+      border-radius: inherit;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      transition: opacity 500ms;
+      z-index: -1;
+      @include darkMode{
+        background: $mouse-hover-dark;
+      }
+    }
+    &-Toggle{
+      display: flex;
+      position: absolute;
+      width: 100%;
+      justify-content: flex-end;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  &-Form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%;
+    max-width: 400px;
+    &-Input{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $accent-2;
+      outline: none;
+      background-color: $Card-Color;
+      color: $black;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      @include darkMode{
+        color: $white;
+        background-color: $imput-Color;
+      }
+      &:focus{
+        border: 1px solid $primary-Color;
+      }
+    }
+    &-Button{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $primary-Color;
+      outline: none;
+      background-color: $primary-Color;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      &:disabled {
+        cursor: not-allowed;
+        background: $disabled;
+      }
+      &:disabled:hover{
+        background: $disabled; 
+        cursor: not-allowed;
+      }
+      &:hover{
+        background-color: $secondary-Color;
+        border: 1px solid $secondary-Color;
+      }
+      
+      @include darkMode{
+        color: $white;
+        border: 1px solid $accent-2;
+        background-color: $accent-2;
+        &:hover{
+          background-color: $primary-Color;
+          border: 1px solid $primary-Color;
+        }
+        &:disabled {
+          background: $disabled;
+          cursor: not-allowed;
+        }
+        &:disabled:hover{
+          background: $disabled; 
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Login-Card{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    &-Toggle{
+      display: flex;
+      position: absolute;
+      width: 100%;
+      justify-content: flex-end;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}

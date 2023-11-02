@@ -1,0 +1,18 @@
+.Login-Layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.Wait{
+  &:disabled {
+    background: $disabled !important;
+    cursor: wait !important;
+  }
+
+  &:disabled:hover{
+    cursor: wait !important;
+    background: $disabled !important; 
+  }
+}

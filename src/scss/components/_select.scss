@@ -1,0 +1,189 @@
+.cajaselect {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  z-index: auto;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid $white;
+  outline: none;
+  background-color: $Card-Color;
+  color: $black;
+  transition: all 0.3s ease;
+  border: 1px solid $accent-2;
+  @include darkMode{
+    color: $white;
+    background-color: $imput-Color;
+    border: 1px solid $accent-2;
+  }
+  &:hover{
+    background-color: $accent-2;
+    border: 1px solid $accent-2;
+    @include darkMode{
+      color: $white;
+      border: 1px solid $primary-Color;
+      background-color: $primary-Color;
+    }
+  }
+  &-seleccionado {
+    color: $black;
+    width: 100%;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 5px 10px;
+    @include darkMode{
+      color: $white;
+    }
+  }
+
+  &-trianguloinf {
+    width: 100%;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    border-top: 13px solid $primary-Color;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-left: 9px solid rgba(0, 0, 0, 0);
+      border-right: 9px solid rgba(0, 0, 0, 0);
+      border-top: 13px solid #cfecfc;
+    }
+  }
+  
+  &-triangulosup {
+    width: 100%;
+    border-bottom: 13px solid $primary-Color;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+    @include darkMode{
+      border-bottom: 13px solid #cfecfc;
+      border-left: 9px solid rgba(0, 0, 0, 0);
+      border-right: 9px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.listaselect {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #dedede;
+  display: none;
+  left: -1px;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 15px;
+  top: 0;
+  width: 100%;
+}
+.desplegableSel {
+  outline: none;
+  background-color: $Card-Color;
+  color: $black;
+  border: 1px solid $accent-2;
+  transition: all 0.3s ease;
+  cursor: pointer;  
+  position: absolute;
+  width: 100%;
+  z-index: 50;
+  margin: 10px 0 0 0 !important;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.3s ease;
+  overflow: auto;
+  max-height: 155px;
+  @include darkMode{
+    background-color: $black-select;
+    color: $white;
+    border: 1px solid $accent-2;
+  }
+  & li {
+    height: 50px;
+    cursor: pointer;
+    list-style: outside none none;
+    width: 100%;
+    position: relative;
+    color: $black;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 0px 0px;
+    @include darkMode{
+      color: $white;
+    }
+    &:hover{
+      background-color: $accent-2;
+      color: $white;
+      @include darkMode{
+        color: $white;
+        background-color: $primary-Color;
+      }
+    }
+  }
+}
+
+.cajaselectSinBoder {
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  z-index: auto;
+  outline: none;
+  color: $white;
+  background-color: $accent-2;
+  border: 1px solid $accent-2;
+  @include darkMode{
+    color: $white;
+    background-color: $primary-Color;
+    border: 1px solid $primary-Color;
+  }
+  transition: all 0.3s ease;
+  &-seleccionado {
+    color: white;
+    line-height: 3;
+    text-indent: 10px;
+    padding: 5px 10px;
+  }
+
+  &-trianguloinf {
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    border-top: 13px solid #cfecfc;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+  }
+
+  &-triangulosup {
+    border-bottom: 13px solid #cfecfc;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cajaselect-seleccionado {
+      color: $black;
+      width: 100%;
+      height: 50px;
+      line-height: 3;
+      text-indent: 10px;
+      padding: 5px 10px;
+      @include darkMode{
+        color: $white;
+      }
+    }
+
+}
